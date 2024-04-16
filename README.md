@@ -1,4 +1,4 @@
-![GitHub Repo stars](https://img.shields.io/github/stars/WShihan/nano-wechat-bot?style=plastic)  ![GitHub repo size](https://img.shields.io/github/repo-size/WShihan/nano-wechat-bot?style=plastic)   ![GitHub](https://img.shields.io/github/license/WShihan/nano-wechat-bot) ![GitHub last commit](https://img.shields.io/github/last-commit/WShihan/nano-wechat-bot?style=plastic) ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/WShihan/nano-wechat-bot)
+![GitHub Repo stars](https://img.shields.io/github/stars/WShihan/webot?style=plastic)  ![GitHub repo size](https://img.shields.io/github/repo-size/WShihan/webot?style=plastic)   ![GitHub](https://img.shields.io/github/license/WShihan/webot) ![GitHub last commit](https://img.shields.io/github/last-commit/WShihan/webot?style=plastic) ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/WShihan/webot)
 
 ## 介绍
 
@@ -40,7 +40,7 @@
 1.克隆仓库
 
 ```shell
-git clone https://github.com/WShihan/nano-wechat-bot.git
+git clone https://github.com/WShihan/webot.git
 ```
 
 2.修改配置
