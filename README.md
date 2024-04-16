@@ -2,14 +2,16 @@
 
 ## 介绍
 
-<p>一个基于<a href="https://github.com/wechaty/wechaty">wechaty</a>的迷你<img width="25px" src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/icon/wechat.svg" style="display: inline-block;">机器人。</p>
+<p>一个基于<a href="https://github.com/wechaty/wechaty">wechaty</a>的迷你<img width="15px" src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/icon/wechat.svg" style="display: inline-block;">机器人。</p>
+
+   
 
 功能：
 
 * AI对话，可接入ChatGPT。
 * 自定义指令。通过触发已设定指令完成特定任务。
 
-
+​    
 
 当前自定义指令如下：
 
@@ -43,6 +45,8 @@
 git clone https://github.com/WShihan/webot.git
 ```
 
+  
+
 2.修改配置
 
 修改config目录下的index文件，填入相应配置项
@@ -64,6 +68,8 @@ git clone https://github.com/WShihan/webot.git
 }
 ```
 
+  
+
 3.安装依赖
 
 在终端进入项目目录，执行如下命令安装依赖
@@ -72,28 +78,37 @@ git clone https://github.com/WShihan/webot.git
 npm install
 ```
 
+   
+
 4.启动机器人
 
-执行如下命令启动机器人后，终端会显示二维码，需要打开手机客户端扫码登入。
-
+执行如下命令启动机器人后，终端会显示二维码，需要打开手机客户端扫码登入。      
 ⚠️ 注意：一定记得要使用小号，因为存在封号风险。
 
 ```shell
 npm start
 ```
 
-![image-20240416134131663](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416134131663.png)
+![image-20240416134131663](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416134131663.png)  
 
-
+   
 
 如果你没有机器可供部署，可以添加我已经部署好的助手体验（备注：github）。
 
-<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416140029042.png" alt="image-20240416140029042" style="width:50%;border-radius: 5px;" /></p>
+<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416140029042.png" alt="image-20240416140029042" width="50%"  style="border-radius: 5px;" /></p>
 
 
-以下是一些截图：
 
-<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416141835574.png" alt="image-20240416141835574"  style="width: 50%;border-radius: 10px;" /></p>
+以下是一些截图：  
+
+   
+
+<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416141851240.png" alt="image-20240416141835574"  width="50%" style="border-radius: 10px;" /></p>
+
+
+
+
+<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416141835574.png" alt="image-20240416141835574"  width="50%"  style="border-radius: 10px;" /></p>
 
 
 
