@@ -1,15 +1,22 @@
-const axios = require('axios');
-const config = require('../config/index');
+import axios from 'axios';
+import config from '../config/index.js';
 
-/**
- *
- * @param {String} word
- * @returns {Promise}
- */
-async function chatWithGPT(cosplay, word) {
-  return new Promise((resolve, reject) => {
-    axios
-      .request({
+const request = axios.create({
+    baseURL: config.BASE_URL,
+    timeout: 120000,
+    headers: {
+      'content-type': 'application/json',
+    },
+  });
+  
+  /**
+   *
+   * @param {String} word
+   * @returns {Promise}
+   */
+  export async function chatWithGPT(cosplay, word) {
+    return new Promise((resolve, reject) => {
+      request({
         url: config.GPT_URL,
         method: 'post',
         data: {
@@ -28,47 +35,17 @@ async function chatWithGPT(cosplay, word) {
         },
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${config.GPT_KEY}` },
       })
-      .then(res => {
-        if (res.data.choices) {
-          const responseContent = res.data.choices[0].message.content;
-          console.log(responseContent);
-          resolve(responseContent);
-        } else {
-          throw Error('chatgpt请求错误！');
-        }
-      })
-      .catch(err => {
-        console.log(err);
-        reject(err);
-      });
-  });
-}
-
-/**
- *
- * @param {String} cmd
- * @returns {Promise}
- */
-async function chatWithCMD(cmd) {
-  return new Promise((resolve, reject) => {
-    axios
-      .request({
-        url: config.CMD_URL,
-        method: 'post',
-        data: {
-          word: cmd,
-        },
-      })
-      .then(res => {
-        resolve(res.data.data[0]['content']);
-      })
-      .catch(err => {
-        reject(err);
-      });
-  });
-}
-
-module.exports = {
-  chatWithGPT,
-  chatWithCMD,
-};
+        .then(res => {
+          if (res.data.choices) {
+            const responseContent = res.data.choices[0].message.content;
+            resolve(responseContent);
+          } else {
+            throw Error('chatgpt请求错误！');
+          }
+        })
+        .catch(err => {
+          console.log(err);
+          reject(err);
+        });
+    });
+  }

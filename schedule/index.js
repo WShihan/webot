@@ -1,4 +1,4 @@
-const schedule = require('node-schedule')
+import { scheduleJob } from 'node-schedule'
 // date 参数
 
 // 其他规则见 https://www.npmjs.com/package/node-schedule
@@ -32,11 +32,9 @@ const schedule = require('node-schedule')
 //
 // 每6小时触发一次: '0 0 */6 * * *'
 
-function setSchedule(date, callback) {
-    let job =  schedule.scheduleJob({tz: 'Asia/Shanghai', rule: date}, callback)
+export function setSchedule(date, callback) {
+    let job =  scheduleJob({tz: 'Asia/Shanghai', rule: date}, callback)
     return job
 }
 
-module.exports = {
-    setSchedule
-}
+
