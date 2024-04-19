@@ -2,6 +2,10 @@
 
 ## 介绍
 
+<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/tiger.png" width="30px" alt="小助手"  /></p>
+
+
+
 <p>一个基于<a href="https://github.com/wechaty/wechaty">wechaty</a>的迷你<img width="15px" src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/icon/wechat.svg" style="display: inline-block;">机器人。</p>
 
    
