@@ -2,11 +2,11 @@
  * 命令基类
  */
 export class CMD {
-    /**
-     * 
-     * @param {String} keyword 关键字
-     * @param {String} name 命令名称
-     */
+  /**
+   *
+   * @param {String} keyword 关键字
+   * @param {String} name 命令名称
+   */
   constructor(keyword, name) {
     this.keyword = keyword;
     this.name = name;
@@ -16,6 +16,7 @@ export class CMD {
    * @description 命令逻辑
    * @param {import('wechaty').Contact} contact
    * @param {String} msg
+   * @returns {Boolean}
    */
   async run(contact, msg) {}
 
@@ -24,5 +25,7 @@ export class CMD {
    * @param {String} msg
    * @returns {Boolean}
    */
-  validator(msg) {}
+  validator(msg) {
+    return msg.startsWith(this.keyword);
+  }
 }

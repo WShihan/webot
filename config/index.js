@@ -11,6 +11,8 @@ let config = {
   FRIENDSHIP_PASS: '哈哈哈',
 };
 
+
+
 const configFilePath = path.join('config', 'data.json');
 
 /**

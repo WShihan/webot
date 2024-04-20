@@ -2,9 +2,9 @@
 import { delay } from '../utils/index.js';
 import { chatWithGPT } from '../api/index.js';
 import config from '../config/index.js';
-import { RoleSetCMD, CMD } from '../command/index.js';
+import {ConfigSetCMD } from '../command/index.js';
 
-const commands = [new RoleSetCMD('角色', '角色修改')];
+const commands = [new ConfigSetCMD('配置', '配置修改')];
 
 /**
  *
@@ -31,7 +31,7 @@ export async function onMessage(msg) {
     if (msg.self() || content == config.FRIENDSHIP_PASS) {
       return;
     }
-    
+
     // 检验是否为命令
     const cmd = commands.find(item => item.validator(content));
     if (typeof cmd != 'undefined') {

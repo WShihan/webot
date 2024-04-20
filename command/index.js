@@ -1,2 +1,2 @@
 export * from './base.js'
-export * from './role.js'
+export * from './config.js'
