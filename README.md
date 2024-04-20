@@ -13,37 +13,20 @@
 功能：
 
 * AI对话，可接入ChatGPT。
-* 自定义指令。通过触发已设定指令完成特定任务。
+* 可通过微信设置角色
 
-​    
 
-当前自定义指令如下：
 
-* 实时天气查询
-
-  ``````shell
-  ##天气 城市
-  ``````
-
-* NBA赛程结果
-
-  ```shell
-  ##nba 
-  ```
-
-## 使用
+## 安装
 
 ### 准备
 
-* Node > 12
+* Node > 14
 * 一个微信账号
-* 自定义指令需第三方支持
 
 
 
-### 安装
-
-1.克隆仓库
+### 1.克隆仓库
 
 ```shell
 git clone https://github.com/WShihan/webot.git
@@ -51,30 +34,32 @@ git clone https://github.com/WShihan/webot.git
 
   
 
-2.修改配置
+### 2.修改配置
 
-修改config目录下的index文件，填入相应配置项
+在config目录下新建立一个data.json文件，填入如下配置项
 
 ```json
 {
-    // GPT 接口地址
-    GPT_URL:'',
-    // GPT接口密钥
-    GPT_KEY: '', 
-    // GPT模型
-    GPT_MODEL: 'gpt-3.5-turbo',
-    // 角色描述
-    COSPLAY: "你是一个聪明的微信机器人，需要在不违反微信协议的情况下回答我的问题，答案尽量简洁明了，语气可以俏皮可爱一点。",
-    // 英语单词背诵任务启动时间
-    ENGLISH_TIME: '00 20 18 * * *',
-    // 自定义命令接口
-    CMD_URL: '',
+  "GPT_URL": "",
+  "GPT_KEY": "",
+  "GPT_MODEL": "gpt-3.5-turbo",
+  "ROLE": "你是一个微信机器人，你要如实回答我的问题！",
+  "FRIENDSHIP_PASS": "哈哈哈"
 }
+
 ```
 
-  
+  说明：
 
-3.安装依赖
+* GPT_URL： chatgpt接口地址
+* GPT_KEY：chatgpt密钥
+* GPT_MODEL：chatgpt模型
+* ROLE：系统提示词（角色）
+* FRIENDSHIP_PASS：好友申请自动通过口令
+
+
+
+### 3.安装依赖
 
 在终端进入项目目录，执行如下命令安装依赖
 
@@ -84,7 +69,7 @@ npm install
 
    
 
-4.启动机器人
+### 4.启动机器人
 
 执行如下命令启动机器人后，终端会显示二维码，需要打开手机客户端扫码登入。      
 ⚠️ 注意：一定记得要使用小号，因为存在封号风险。
@@ -103,16 +88,27 @@ npm start
 
 
 
-以下是一些截图：  
+## 使用
+
+### 1.对话
+
+直接发送消息对话
 
    
 
 <p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416141851240.png" alt="image-20240416141835574"  width="50%" style="border-radius: 10px;" /></p>
 
+### 2.修改角色
+
+发送 “角色 描述文字”
 
 
 
-<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416141835574.png" alt="image-20240416141835574"  width="50%"  style="border-radius: 10px;" /></p>
+<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/%E8%8B%B1%E8%AF%AD%E8%A7%92%E8%89%B2.jpeg" alt="image-20240416141835574"  width="50%"  style="border-radius: 10px;" /></p>
+
+
+
+
 
 
 

@@ -1,8 +1,8 @@
 import axios from 'axios';
 import config from '../config/index.js';
 
+
 const request = axios.create({
-    baseURL: config.BASE_URL,
     timeout: 120000,
     headers: {
       'content-type': 'application/json',
