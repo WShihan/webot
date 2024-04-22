@@ -1,4 +1,4 @@
-![GitHub Repo stars](https://img.shields.io/github/stars/WShihan/webot?style=plastic)  ![GitHub repo size](https://img.shields.io/github/repo-size/WShihan/webot?style=plastic)   ![GitHub](https://img.shields.io/github/license/WShihan/webot) ![GitHub last commit](https://img.shields.io/github/last-commit/WShihan/webot?style=plastic) ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/WShihan/webot)
+![GitHub Repo stars](https://img.shields.io/github/stars/WShihan/webot?style=plastic)  ![GitHub forks](https://img.shields.io/github/forks/WShihan/webot?style=plastic)   ![GitHub repo size](https://img.shields.io/github/repo-size/WShihan/webot?style=plastic)   ![GitHub](https://img.shields.io/github/license/WShihan/webot) ![GitHub last commit](https://img.shields.io/github/last-commit/WShihan/webot?style=plastic) ![GitHub package.json version (subfolder of monorepo)](https://img.shields.io/github/package-json/v/WShihan/webot)
 
 ## 介绍
 
