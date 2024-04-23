@@ -64,12 +64,13 @@ export async function chatWithGPT(cosplay, word) {
 /**
  * 自定义接口地址
  * @param {String} word
+ * @param {String} url
  * @returns
  */
-export function chatWithCMD(word) {
+export function chatWithCMD(word, url) {
   return new Promise((resolve, reject) => {
     request({
-      url: config.CMD_URL,
+      url: url,
       method: 'post',
       data: {
         word,

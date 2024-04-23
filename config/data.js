@@ -10,9 +10,14 @@ export const configData = {
   ROLE: '一个微信机器人，说话很温柔',
   // 好友申请自动通过口令
   FRIENDSHIP_PASS: '',
-  // 自定义指令回调地址
-  CMD_URL: '',
   // 敏感词汇
   BLOCK_WORDS: [],
+  // 回调事件
+  CALLBACKS: [
+    {
+      keyword: '##',
+      url: 'https://www.wsh233.cn/api/bot',
+    },
+  ],
 };
 export default configData;

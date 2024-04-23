@@ -7,15 +7,17 @@ import {
   WordBlockAddCMD,
   WordBlockRemoveCMD,
   WordBlockCheckCMD,
+  CallbackCMD,
 } from '../command/index.js';
 import { tip } from '../utils/index.js';
 
 // 所有自定义指令
 const commands = [
-  new ConfigSetCMD('配置', '配置修改'),
+  new ConfigSetCMD(null, '配置修改'),
   new WordBlockCheckCMD('敏感词', '查看敏感词'),
   new WordBlockAddCMD('添加敏感词', '添加敏感词汇'),
   new WordBlockRemoveCMD('移除敏感词', '移除敏感词汇'),
+  new CallbackCMD(null, '回调命令'),
 ];
 
 /**
