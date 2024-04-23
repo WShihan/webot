@@ -13,7 +13,7 @@ request.interceptors.request.use(cfg => {
   if (cfg.method == 'post') {
     const sign = makeCrypto(cfg.data, config.BOT_KEY);
     console.log(JSON.stringify(cfg.data));
-    console.log(sign);
+    // console.log(sign);
     //  根据密钥和数据体计算签名
     cfg.headers['X-Signature'] = sign;
   }
@@ -73,8 +73,6 @@ export function chatWithCMD(word) {
       method: 'post',
       data: {
         word,
-        name: 'dfdf',
-        age: 18,
       },
     })
       .then(res => {
