@@ -2,28 +2,23 @@
 // import readConfig from './read.js';
 import fs from 'fs';
 import path from 'path';
+import config from './data.js';
+import { tip } from '../utils/index.js';
 
-let config = {
-  GPT_URL: '',
-  GPT_KEY: '',
-  GPT_MODEL: 'gpt-3.5-turbo',
-  ROLE: '你是一个聪明的微信机器人，需要在不违反微信协议的情况下回答我的问题，答案尽量简洁明了，语气可以俏皮可爱一点。',
-  FRIENDSHIP_PASS: '哈哈哈',
-};
-
-
-
-const configFilePath = path.join('config', 'data.json');
+const configFilePath = path.join('config', 'config-memory.json');
 
 /**
  * @description 从文件中读取配置对象信息
  * @returns {Object}
  */
 export function readConfig() {
-  if (fs.statSync(configFilePath)) {
+  if (fs.existsSync(configFilePath)) {
     const data = fs.readFileSync(configFilePath);
-    return JSON.parse(data);
+    const localCfg = JSON.parse(data);
+    tip('读取本地配置成功');
+    return localCfg;
   } else {
+    tip('本地配置文件不存在');
     return {};
   }
 }
@@ -38,15 +33,17 @@ export async function writeConfig(data) {
     Object.assign(config, data);
     const jsonData = JSON.stringify(config);
     fs.writeFileSync(configFilePath, jsonData);
+    tip('持久化保存配置成功');
     return true;
   } catch (err) {
     console.log(err);
+    tip('持久化保存配置失败');
     return false;
   }
 }
 
 const localConfig = await readConfig();
 Object.assign(config, localConfig);
-console.log('读取保存的本地配置', config);
+console.log('当前配置：', config);
 
 export default config;

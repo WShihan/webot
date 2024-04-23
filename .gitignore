@@ -19,3 +19,4 @@
 package-lock.json
 login.jpg
 login.png
+config/*.json

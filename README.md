@@ -40,22 +40,23 @@ git clone https://github.com/WShihan/webot.git
 
 ```json
 {
-  "GPT_URL": "",
-  "GPT_KEY": "",
-  "GPT_MODEL": "gpt-3.5-turbo",
-  "ROLE": "你是一个微信机器人，你要如实回答我的问题！",
-  "FRIENDSHIP_PASS": "哈哈哈"
+  // chatgpt 接口
+  GPT_URL: '',
+  // chatgpt 接口密钥
+  GPT_KEY: '',
+  // chatgpt模型
+  GPT_MODEL: 'gpt-3.5-turbo',
+  // chatgpt 系统提示（角色）
+  ROLE: '一个微信机器人，说话很温柔',
+  // 好友申请自动通过口令
+  FRIENDSHIP_PASS: '',
+  // 自定义指令回调地址
+  CMD_URL: '',
+  // 敏感词汇
+  BLOCK_WORDS: [],
 }
 
 ```
-
-  说明：
-
-* GPT_URL： chatgpt接口地址
-* GPT_KEY：chatgpt密钥
-* GPT_MODEL：chatgpt模型
-* ROLE：系统提示词（角色）
-* FRIENDSHIP_PASS：好友申请自动通过口令
 
 
 
@@ -84,7 +85,7 @@ npm start
 
 如果你没有机器可供部署，可以添加我已经部署好的助手体验（备注：github）。
 
-<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416140029042.png" alt="image-20240416140029042" width="50%"  style="border-radius: 5px;" /></p>
+<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416140029042.png" alt="image-20240416140029042" width="40%"  style="border-radius: 5px;" /></p>
 
 
 
@@ -94,22 +95,49 @@ npm start
 
 直接发送消息对话
 
-   
-
-<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416141851240.png" alt="image-20240416141835574"  width="50%" style="border-radius: 10px;" /></p>
-
-### 2.修改角色
-
-发送 “角色 描述文字”
+   ![image-20240423162407678](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240423162407678.png)
 
 
 
-<p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/%E8%8B%B1%E8%AF%AD%E8%A7%92%E8%89%B2.jpeg" alt="image-20240416141835574"  width="50%"  style="border-radius: 10px;" /></p>
+### 2.修改配置
+
+#### 对话配置
+
+发送如下格式文字 ，
+
+```
+接口/模型/密钥/角色 值
+```
+
+#### 示例：
+
+修改角色
+
+![image-20240423162102474](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240423162102474.png)
 
 
 
+修改对话设置
+
+![image-20240423163136612](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240423163136612.png)
+
+### 3. 其他配置
+
+#### 3.1 好友申请自动通过口令
+
+当好友申请验证信息和口令一致时，自动通过。
+
+![image-20240423163520087](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240423163520087.png)
 
 
+
+#### 3.2 词汇过滤
+
+可设置和移除敏感词汇，防止出现危害言论。
+
+添加或移除多个敏感词时，用中文逗号隔开。
+
+![image-20240423164142194](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240423164142194.png)
 
 
 
