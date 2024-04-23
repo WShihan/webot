@@ -39,7 +39,14 @@ export class ConfigSetCMD extends CMD {
    * @returns {String}
    */
   async run(contact, msg) {
-    const value = msg.replace(this.keyword, '').trim();
+    let value = msg.replace(this.keyword, '').trim();
+    if (this.keyword == '接口') {
+      // 如果是网址，格式是html的a标签
+      const reg = />(.*)<\/a>/;
+      if (reg.test(value)) {
+        value = reg.exec(value)[1].trim();
+      }
+    }
     writeConfig({ [configMap[this.keyword]]: value });
     const res = `指令${this.name}：${value}`;
     contact.say(res);
