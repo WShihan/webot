@@ -36,7 +36,7 @@ git clone https://github.com/WShihan/webot.git
 
 ### 2.修改配置
 
-在config目录下新建立一个data.json文件，填入如下配置项
+修改config目录下的data.js文件，填写如下配置项
 
 ```json
 {
@@ -83,7 +83,7 @@ npm start
 
    
 
-如果你没有机器可供部署，可以添加我已经部署好的助手体验（备注：github）。
+如果你没有机器可供部署，可以添加我已经部署好的助手体验（验证信息：github）。
 
 <p align="center"><img src="https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240416140029042.png" alt="image-20240416140029042" width="40%"  style="border-radius: 5px;" /></p>
 
@@ -105,7 +105,7 @@ npm start
 
 发送如下格式文字 ，
 
-```
+```plaintext
 接口/模型/密钥/角色 值
 ```
 
@@ -133,11 +133,16 @@ npm start
 
 #### 3.2 词汇过滤
 
-可设置和移除敏感词汇，防止出现危害言论。
+可设置和移除敏感词汇，防止出现危害/不良言论。
 
 添加或移除多个敏感词时，用中文逗号隔开。
 
 ![image-20240423164142194](https://md-1301600412.cos.ap-nanjing.myqcloud.com/pic/typora/image-20240423164142194.png)
+
+
+
+
+
 
 
 
