@@ -1,4 +1,5 @@
 export const configData = {
+  BOT_KEY: '',
   // chatgpt 接口
   GPT_URL: '',
   // chatgpt 接口密钥
