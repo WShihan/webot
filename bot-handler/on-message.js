@@ -10,6 +10,7 @@ import {
   CallbackCMD,
 } from '../command/index.js';
 import { tip } from '../utils/index.js';
+import { ConversaionManager, Conversation } from './conversation.js';
 
 // 所有自定义指令
 const commands = [
@@ -19,6 +20,8 @@ const commands = [
   new WordBlockRemoveCMD('移除敏感词', '移除敏感词汇'),
   new CallbackCMD(null, '回调命令'),
 ];
+
+const conversationMng = new ConversaionManager();
 
 /**
  *
@@ -71,7 +74,10 @@ export async function onMessage(msg) {
       // room.say(`@${name},小助手不支持在群里对话，需要添加好友到通讯录里！`);
     } else if (isText) {
       // 非群消息 只处理文字消息
-      const response = await chatWithGPT(config.ROLE, content);
+      let chat = conversationMng.getChat(name);
+      chat.push({ role: 'user', content });
+      const response = await chatWithGPT(config.ROLE, chat);
+      chat.push({ role: 'assistant', content: response });
       contact.say(response);
       console.log(`回复: ${contact} 内容: ${response}`);
     } else {

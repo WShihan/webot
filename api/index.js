@@ -12,8 +12,6 @@ const request = axios.create({
 request.interceptors.request.use(cfg => {
   if (cfg.method == 'post') {
     const sign = makeCrypto(cfg.data, config.BOT_KEY);
-    console.log(JSON.stringify(cfg.data));
-    // console.log(sign);
     //  根据密钥和数据体计算签名
     cfg.headers['X-Signature'] = sign;
   }
@@ -22,26 +20,28 @@ request.interceptors.request.use(cfg => {
 
 /**
  *
- * @param {String} word
+ * @param {Array} messages
  * @returns {Promise}
  */
-export async function chatWithGPT(cosplay, word) {
+export async function chatWithGPT(cosplay, messages) {
   return new Promise((resolve, reject) => {
+    const newMsg = [
+      {
+        role: 'system',
+        content: cosplay,
+      },
+      ...messages,
+    ];
+    console.log('-------历史-----------');
+    console.log(JSON.stringify(newMsg));
+    console.log('----------------------');
+
     request({
       url: config.GPT_URL,
       method: 'post',
       data: {
         model: config.GPT_MODEL,
-        messages: [
-          {
-            role: 'system',
-            content: cosplay,
-          },
-          {
-            role: 'user',
-            content: word,
-          },
-        ],
+        messages: newMsg,
         safe_mode: false,
       },
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${config.GPT_KEY}` },
